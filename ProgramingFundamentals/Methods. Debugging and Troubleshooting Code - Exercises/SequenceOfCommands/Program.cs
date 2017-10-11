@@ -19,50 +19,48 @@ namespace SequenceOfCommands
                 .Select(long.Parse)
                 .ToArray();
 
-            string command = Console.ReadLine();
 
-            while (!command.Equals("over"))
+            string command = "";
+            while (!command.Equals("stop"))
             {
-                string line = Console.ReadLine().Trim();
+                command = Console.ReadLine().Trim();
                 int[] args = new int[2];
 
-                if (command.Equals("add") ||
-                    command.Equals("substract") ||
-                    command.Equals("multiply"))
+                if (command.Contains("add") ||
+                    command.Contains("subtract") ||
+                    command.Contains("multiply"))
                 {
-                    string[] stringParams = line.Split(ArgumentsDelimiter);
-                    args[0] = int.Parse(stringParams[0]);
-                    args[1] = int.Parse(stringParams[1]);
+                    string[] stringParams = command.Split(ArgumentsDelimiter);
+                    command = stringParams[0];
+                    args[0] = int.Parse(stringParams[1]);
+                    args[1] = int.Parse(stringParams[2]);
 
+                    
                     PerformAction(array, command, args);
                 }
-
-                PerformAction(array, command, args);
-
-                PrintArray(array);
-                Console.WriteLine('\n');
-
-                command = Console.ReadLine();
+                else if(command != "stop")
+                {
+                    PerformAction(array, command, args);
+                }
             }
         }
 
-        static void PerformAction(long[] arr, string action, int[] args)
+        static void PerformAction(long[] array, string action, int[] args)
         {
-            long[] array = arr.Clone() as long[];
+            
             int pos = args[0];
             int value = args[1];
 
             switch (action)
             {
-                
                 case "multiply":
-                    array[pos] *= value;
+                    array[pos-1] *= value;
                     break;
                 case "add":
-                    array[pos] += value;
+                    array[pos-1] += value;
                     break;
                 case "subtract":
-                    array[pos] -= value;
+                    array[pos-1] -= value;
                     break;
                 case "lshift":
                     ArrayShiftLeft(array);
@@ -71,30 +69,30 @@ namespace SequenceOfCommands
                     ArrayShiftRight(array);
                     break;
             }
+            Console.WriteLine(string.Join(" ",array));
+            
         }
 
         private static void ArrayShiftRight(long[] array)
         {
+            long a = array[array.Length - 1];
             for (int i = array.Length - 1; i >= 1; i--)
             {
                 array[i] = array[i - 1];
             }
+            array[0] = a;
         }
 
         private static void ArrayShiftLeft(long[] array)
         {
+            long a = array[0];
             for (int i = 0; i < array.Length - 1; i++)
             {
                 array[i] = array[i + 1];
             }
+            array[array.Length-1] = a;
         }
 
-        private static void PrintArray(long[] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.WriteLine(array[i] + " ");
-            }
-        }
+        
     }
 }
