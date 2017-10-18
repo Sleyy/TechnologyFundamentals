@@ -59,13 +59,10 @@ namespace DragonArmyTwo
             }
             foreach (var dragonType in dragons)
             {
-                Console.WriteLine($"{dragonType.Key}::{dragonType.Value.Select(x=>x.Value)}");
+                Console.WriteLine($"{dragonType.Key}::({(double)dragonType.Value.Values.Average(x=>x[0]):f2}/{(double)dragonType.Value.Values.Average(x => x[1]):f2}/{(double)dragonType.Value.Values.Average(x => x[2]):f2})");
                 foreach (var dragonName in dragonType.Value)
                 {
-                   
-                         Console.WriteLine($"{dragonName.Key} -> damage: {dragonName.Value[0]} health: {dragonName.Value[1]}, armor: {dragonName.Value[2]}");
-                   
-                    
+                      Console.WriteLine($"-{dragonName.Key} -> damage: {dragonName.Value[0]}, health: {dragonName.Value[1]}, armor: {dragonName.Value[2]}");
                 }
             }
         }
