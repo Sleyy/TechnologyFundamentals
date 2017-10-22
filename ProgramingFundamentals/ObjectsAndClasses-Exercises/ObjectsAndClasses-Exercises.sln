@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookLibraryModification", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreyAndBilliard", "AndreyAndBilliard\AndreyAndBilliard.csproj", "{9C24B127-746B-46E3-9096-BD8C1394652E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentorGroup", "MentorGroup\MentorGroup.csproj", "{2875B785-F2F0-4B76-B641-5014173C5FED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamworkProjects", "TeamworkProjects\TeamworkProjects.csproj", "{549DA387-2660-4A2E-B704-6EEB8D049A99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{9C24B127-746B-46E3-9096-BD8C1394652E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C24B127-746B-46E3-9096-BD8C1394652E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C24B127-746B-46E3-9096-BD8C1394652E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2875B785-F2F0-4B76-B641-5014173C5FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2875B785-F2F0-4B76-B641-5014173C5FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2875B785-F2F0-4B76-B641-5014173C5FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2875B785-F2F0-4B76-B641-5014173C5FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{549DA387-2660-4A2E-B704-6EEB8D049A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{549DA387-2660-4A2E-B704-6EEB8D049A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{549DA387-2660-4A2E-B704-6EEB8D049A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{549DA387-2660-4A2E-B704-6EEB8D049A99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
