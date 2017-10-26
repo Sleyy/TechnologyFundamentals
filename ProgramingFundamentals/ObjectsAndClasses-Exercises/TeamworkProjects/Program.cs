@@ -24,6 +24,7 @@ namespace TeamworkProjects
             string inputString = Console.ReadLine();
             List<string> teamsToDisband = new List<string>();
             int counter = 0;
+
             while (inputString != "end of assignment")
             {
                 Team currentTeam = new Team();
@@ -63,8 +64,7 @@ namespace TeamworkProjects
                 }
                 else if (inputString.Contains(">"))
                 {
-
-                    var input = inputString
+                        var input = inputString
                         .Split(new string[] { "-", ">" }, StringSplitOptions.RemoveEmptyEntries)
                         .ToArray();
                     if (teams.Any(x => x.Name == input[1]) && !teams.Any(x => x.Members.Contains(input[0])) && !teams.Any(x => x.Creator == input[0]))
@@ -73,7 +73,7 @@ namespace TeamworkProjects
                         currentTeam.Members.Add(input[0]);
                         foreach (var team in teams)
                         {
-                            if (team.Name.Contains(input[1]))
+                            if (team.Name.Equals(input[1]))
                             {
                                 team.Members.Add(input[0]);
                             }
