@@ -6,45 +6,77 @@ using System.Threading.Tasks;
 
 namespace HornetArmada
 {
-    class Soldiers
-    {
-        public int Activity { get; set; }
-        public string SoldierName { get; set; }
-        public int SoldierCount { get; set; }
-    }
+   
+   
     class Program
     {
         static void Main(string[] args)
         {
             int soldierLines = int.Parse(Console.ReadLine());
-            Dictionary<string,Soldiers> legions = new Dictionary<string, Soldiers>();
-
-            string[] input = Console.ReadLine()
-                .Split(new string[] {" ", "=", "-", ">", ":"}, StringSplitOptions.RemoveEmptyEntries)
-                .ToArray();
-
-            while (input.Length > 2)
+            Dictionary<string,Dictionary<string,long>> legions = new Dictionary<string, Dictionary<string, long>>();
+            Dictionary<string,int> legionActivity = new Dictionary<string, int>();
+            
+            for (int i = 0; i < soldierLines; i++)
             {
-                Soldiers currentSoldiers = new Soldiers();
-                currentSoldiers.Activity = int.Parse(input[0]);
-                currentSoldiers.SoldierName = input[2];
-                currentSoldiers.SoldierCount = int.Parse(input[3]);
-                if (!legions.ContainsKey(input[1]))
-                {
-                    legions.Add(input[1],currentSoldiers);
-                }
-                else
-                {
-                    
-                }
-
-
-
-
-
-                input = Console.ReadLine()
-                    .Split(new string[] { " ", "=", "-", ">", ":" }, StringSplitOptions.RemoveEmptyEntries)
+                string[] input = Console.ReadLine()
+                    .Split(new char[] { ' ', '=','-', '>',':' }, StringSplitOptions.RemoveEmptyEntries)
                     .ToArray();
+                int activity = int.Parse(input[0]);
+                string legionName = input[1];
+                string soldierType = input[2];
+                long soldierCount = long.Parse(input[3]);
+                if (!legions.ContainsKey(legionName))
+                {
+                    legions.Add(legionName, new Dictionary<string, long>());
+                    legions[legionName].Add(soldierType,soldierCount);
+                    legionActivity.Add(legionName, activity);
+                }
+                else if (legions.ContainsKey(legionName))
+                {
+                    if (legionActivity[legionName] <= activity)
+                    {
+                        legionActivity[legionName] = activity;
+                    }
+                    if (!legions[legionName].ContainsKey(soldierType))
+                    {
+                        legions[legionName].Add(soldierType, soldierCount);
+                    }
+                    else
+                    {
+                        legions[legionName][soldierType] += soldierCount;
+                    }
+                }
+            }
+            string[] printCommand = Console.ReadLine()
+                .Split(new string[] {"\\"}, StringSplitOptions.RemoveEmptyEntries)
+                .ToArray();
+            if (printCommand.Length==2)
+            {
+                legions = legions.Where(x => x.Value.ContainsKey(printCommand[1])).OrderByDescending(x => x.Value[printCommand[1]]).ToDictionary(x=>x.Key,x=>x.Value);
+                foreach (var legion in legions)
+                {
+                    if (legionActivity[legion.Key] < int.Parse(printCommand[0]))
+                    {
+                        foreach (var solderGroup in legion.Value)
+                        {
+                            if (solderGroup.Key == printCommand[1])
+                            {
+                                Console.WriteLine($"{legion.Key} -> {solderGroup.Value}");
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                legionActivity = legionActivity.OrderByDescending(x => x.Value).ToDictionary(x=> x.Key,x=> x.Value);
+                foreach (var legion in legionActivity)
+                {
+                    if (legions[legion.Key].Keys.Contains(printCommand[0]))
+                    {
+                        Console.WriteLine($"{legion.Value} : {legion.Key}");
+                    }
+                }
             }
         }
     }
