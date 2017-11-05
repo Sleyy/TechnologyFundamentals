@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharityMarathon", "CharityMarathon\CharityMarathon.csproj", "{FF6A8EFF-5FB1-4ED5-A347-4BB742420404}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LadyBugs", "LadyBugs\LadyBugs.csproj", "{868429C4-4BAC-4B43-846A-245836C30C23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetherRealms", "NetherRealms\NetherRealms.csproj", "{9639D58E-1071-4D66-B532-B8FF0D5BBD09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{868429C4-4BAC-4B43-846A-245836C30C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{868429C4-4BAC-4B43-846A-245836C30C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{868429C4-4BAC-4B43-846A-245836C30C23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9639D58E-1071-4D66-B532-B8FF0D5BBD09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9639D58E-1071-4D66-B532-B8FF0D5BBD09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9639D58E-1071-4D66-B532-B8FF0D5BBD09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9639D58E-1071-4D66-B532-B8FF0D5BBD09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
