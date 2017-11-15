@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharityMarathon", "CharityM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LadyBugs", "LadyBugs\LadyBugs.csproj", "{868429C4-4BAC-4B43-846A-245836C30C23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{D19CC924-6A16-4498-AA1D-EB73A8E4B7D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{868429C4-4BAC-4B43-846A-245836C30C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{868429C4-4BAC-4B43-846A-245836C30C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{868429C4-4BAC-4B43-846A-245836C30C23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D19CC924-6A16-4498-AA1D-EB73A8E4B7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D19CC924-6A16-4498-AA1D-EB73A8E4B7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D19CC924-6A16-4498-AA1D-EB73A8E4B7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D19CC924-6A16-4498-AA1D-EB73A8E4B7D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
